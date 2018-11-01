@@ -25,9 +25,11 @@
     <link rel="stylesheet" href="TemplateData/style.css">
 
     <script src="TemplateData/UnityProgress.js"></script>  
-    <script src="Build/UnityLoader.js"></script>
+    <script src="build_teaching/UnityLoader.js"></script>
+    <script src="build_surgery/UnityLoader.js"></script>
     <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/student_scene_embed.json", {onProgress: UnityProgress});
+      var teachingInstance = UnityLoader.instantiate("teachingContainer", "build_teaching/student_scene_embed.json", {onProgress: UnityProgress});
+      var surgeryInstance = UnityLoader.instantiate("surgeryContainer", "build_surgery/Main Scene.json", {onProgress: UnityProgress});
     </script>
 
   </head>
@@ -60,81 +62,16 @@
 
     <!-- Header -->
     <header class="masthead">
-      <div class="container">
-        <div class="intro-text">
-          <div class="intro-lead-in">Welcome To Our Studio!</div>
-          <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#scene_1">Scene 1</a>
+      <div class='darkener'>
+        <div class="container">
+          <div class="intro-text">
+            <div class="intro-lead-in">UCL Team 7</div>
+            <div class="intro-heading text-uppercase">GOSH VR and 3D Imaging</div>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#scene_1">Scene 1</a>
+          </div>
         </div>
       </div>
     </header>
-
-    <!-- scene_1 -->
-    <section id="scene_1">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Scene 1</h2>
-            <h3 class="section-subheading text-muted">Using the Hololens during surgery.</h3>
-            <img src='img/ct_scan.png'>
-            <h3 class='section-subheading text-muted'>Here, the CT scan is processed into a 3D model and machine learning is used to identify which parts of the brain are damaged.</h3>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- scene_2 Grid -->
-    <section class="bg-light" id="scene_2">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Scene 2</h2>
-            <h3 class="section-subheading text-muted">Using the Hololens for teaching.</h3>
-          </div>
-        </div>
-        <div class='row'>
-          <div class="col-lg-12 text-center">
-            <p>Click the button to view each organ. For the brain, press E to expand and C to close.</p>
-            <div class="webgl-content">
-              <div id="gameContainer" style="width: 960px; height: 600px; display: block; margin: 0 auto;"></div>
-              <div class="footer">
-                <div class="webgl-logo"></div>
-                <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-                <div class="title">GOSH Prevision Coursework</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class='row'>
-          <div class="col-lg-12 text-center">
-            <div class="sketchfab-embed-wrapper">
-              <h2 class="section-subheading text-uppercase">The Heart</h2>
-              <h3 class='section-subheading text-muted'>Animation of how the heart pumps blood around our body.</h3>
-              <iframe width="960" height="600" src="https://sketchfab.com/models/168b474fba564f688048212e99b4159d/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-            </div>
-            <div class="sketchfab-embed-wrapper">
-              <h2 class="section-subheading text-uppercase">Human Muscle Anatomy</h2>
-              <h3 class='section-subheading text-muted'>Shows all major muscle groups of the human body.</h3>
-              <iframe width="960" height="600" src="https://sketchfab.com/models/85249bf91630484dbfa60fee568875d3/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-            </div>
-            <div class="sketchfab-embed-wrapper">
-              <h2 class="section-subheading text-uppercase">Orofacial Anatomy</h2>
-              <h3 class='section-subheading text-muted'>Visualization of the orofacial anatomy showing the blood and nerve supply of this area.</h3>
-              <iframe width="960" height="600" src="https://sketchfab.com/models/3f5afc9d2e4b4b28b3459afffab050c3/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-            </div>
-            <div class="sketchfab-embed-wrapper">
-              <h2 class="section-subheading text-uppercase">The Cerebellum</h2>
-              <h3 class='section-subheading text-muted'>Basic anatomy of the human cerebellum. The main lobes of the cerebellar hemispheres are shown, although the flocculo-nodular lobe is buried within a fold and so can only be seen on a sagittal section. The positions of the cerebellar peduncles are coloured to show where they would be although they cannot be distinguished easily when cut in cross-section.</h3>
-              <iframe width="960" height="600" src="https://sketchfab.com/models/3a4e017a202a4928b666371d075d0e21/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-            </div>
-            <img class='img-full' src='img/holo_1.png'>
-            <h3 class='section-subheading text-muted'>An example of how students can use the Hololens to visualise human organs.</h3>
-            <img class='img-full' src='img/holo_2.png'>
-            <h3 class='section-subheading text-muted'>An example of how students can use the Hololens to visualise the human body.</h3>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- About -->
     <section id="about">
@@ -218,8 +155,114 @@
             </li>
           </ul>
         </div>
+        <div class='row'>
+          <div class="col-lg-12 text-center">
+            <h2 class="section-subheading text-uppercase">Mock-ups</h2>
+            <h3 class="section-subheading text-muted">Here are videos of the mock-ups we build for the teaching (left) and surgery (right) applications.</h3>
+          </div>
+          <div class='col-lg-6 text-center'>
+            <video width='480' height='300' src='vid/video1.mov' controls></video>
+          </div>
+          <div class='col-lg-6'>
+            <video width='480' height='300' controls>
+              <source src="vid/video2.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- scene_1 -->
+    <section id="scene_1">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Scene 1</h2>
+            <h3 class="section-subheading text-muted">Using the Hololens during surgery.</h3>
+            <div class="webgl-content">
+              <div id="surgeryContainer" style="width: 960px; height: 600px; display: block; margin: 0 auto;"></div>
+              <div class="footer">
+                <div class="webgl-logo"></div>
+                <div class="fullscreen" onclick="surgeryInstance.SetFullscreen(1)"></div>
+                <div class="title">GOSH Prevision Coursework</div>
+              </div>
+            </div>
+            <img class='margin-img' src='img/ct_scan.png'>
+            <h3 class='section-subheading text-muted'>Here, the CT scan is processed into a 3D model and machine learning is used to identify which parts of the brain are damaged.</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- scene_2 Grid -->
+    <section class="bg-light" id="scene_2">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Scene 2</h2>
+            <h3 class="section-subheading text-muted">Using the Hololens for teaching.</h3>
+          </div>
+        </div>
+        <div class='row'>
+          <div class="col-lg-12 text-center">
+            <p>Click the button to view each organ. For the brain, press E to expand and C to close.</p>
+            <div class="webgl-content">
+              <div id="teachingContainer" style="width: 960px; height: 600px; display: block; margin: 0 auto;"></div>
+              <div class="footer">
+                <div class="webgl-logo"></div>
+                <div class="fullscreen" onclick="teachingInstance.SetFullscreen(1)"></div>
+                <div class="title">GOSH Prevision Coursework</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class="col-lg-6 text-center">
+            <div class="sketchfab-embed-wrapper">
+              <h2 class="section-subheading text-uppercase">The Heart</h2>
+              <iframe width="480" height="300" src="https://sketchfab.com/models/168b474fba564f688048212e99b4159d/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+              <h3 class='section-subheading text-muted'>Animation of how the heart pumps blood around our body.</h3>
+            </div>
+          </div>
+          <div class="col-lg-6 text-center">
+            <div class="sketchfab-embed-wrapper">
+              <h2 class="section-subheading text-uppercase">Human Muscle Anatomy</h2>
+              <iframe width="480" height="300" src="https://sketchfab.com/models/85249bf91630484dbfa60fee568875d3/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+              <h3 class='section-subheading text-muted'>Shows all major muscle groups of the human body.</h3>
+            </div>
+          </div>
+        </div>
+        <div class='row'>
+          <div class="col-lg-6 text-center">
+            <div class="sketchfab-embed-wrapper">
+              <h2 class="section-subheading text-uppercase">Orofacial Anatomy</h2>
+              <iframe width="480" height="300" src="https://sketchfab.com/models/3f5afc9d2e4b4b28b3459afffab050c3/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+              <h3 class='section-subheading text-muted'>Visualization of the orofacial anatomy showing the blood and nerve supply of this area.</h3>
+            </div>
+          </div>
+          <div class="col-lg-6 text-center">
+            <div class="sketchfab-embed-wrapper">
+              <h2 class="section-subheading text-uppercase">The Cerebellum</h2>
+              <iframe width="480" height="300" src="https://sketchfab.com/models/3a4e017a202a4928b666371d075d0e21/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+              <h3 class='section-subheading text-muted'>Basic anatomy of the human cerebellum. The main lobes of the cerebellar hemispheres are shown, although the flocculo-nodular lobe is buried within a fold and so can only be seen on a sagittal section. The positions of the cerebellar peduncles are coloured to show where they would be although they cannot be distinguished easily when cut in cross-section.</h3>
+            </div>
+          </div>
+        </div>
+        <div class='row'>
+          <div class="col-lg-6 text-center">
+            <img class='img-full' src='img/holo_1.png'>
+            <h3 class='section-subheading text-muted'>An example of how students can use the Hololens to visualise human organs</h3>
+          </div>
+          <div class="col-lg-6 text-center">
+            <img class='img-full' src='img/holo_2.png'>
+            <h3 class='section-subheading text-muted'>An example of how students can use the Hololens to visualise the human body.</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>

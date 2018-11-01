@@ -176,11 +176,16 @@ img::-moz-selection {
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("../img/header-bg.jpg");
+  background-image: url("../img/ucl.jpeg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+}
+
+header.masthead .darkener {
+  background-color: rgba(1, 1, 1, 0.4);
+  width: 100%;
 }
 
 header.masthead .intro-text {
